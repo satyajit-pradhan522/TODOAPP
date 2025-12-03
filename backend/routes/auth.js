@@ -20,5 +20,26 @@ router.post("/register", async (req, res) => {
     res.status(500).json(err);
   }
 });
+// Log In
+router.post("/login", async (req, res) => {
+  try {
+    const email = req.body.email;
+    const password = req.body.password;
+    const usernameFound = await User.findOne({ email: email });
+    if (!usernameFound) {
+      return res.status(404).json("User not found");
+    }
+    const validPassword = await bcrypt.compare(
+      password,
+      usernameFound.password
+    );
+    if (!validPassword) {
+      return res.status(400).json("Invalid password");
+    }
+    res.status(200).json("Login successful");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
