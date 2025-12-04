@@ -3,9 +3,13 @@ const app = express();
 const port = 3000;
 require("./connection/connection");
 const authRoute = require("./routes/auth");
+const listRoute = require("./routes/list");
 
 app.use(express.json());
 app.use("/api/auth", authRoute);
+
+app.use(express.json());
+app.use("/api/lists", listRoute);
 
 app.get("/", (req, res) => res.send("Hello World!"));
 

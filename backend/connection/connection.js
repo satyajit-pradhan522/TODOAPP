@@ -3,14 +3,13 @@ const mongoose = require("mongoose");
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://satyajitpradhan:phonepay2003@cluster0.7lfbhlt.mongodb.net/"
+      "mongodb+srv://satyajitpradhan:phonepay2003@cluster0.7lfbhlt.mongodb.net/todo-list"
     );
-    console.log("MongoDB connected successfully");
+
+    console.log("MongoDB Connected Successfully");
   } catch (error) {
-    res.starus(500).send({ message: "MongoDB connection failed", error });
+    console.log("MongoDB Not Connected", error);
   }
 };
 
 connectDB();
-
-module.exports = connectDB;

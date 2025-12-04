@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
   },
   list: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Types.ObjectId,
       ref: "List",
     },
   ],
