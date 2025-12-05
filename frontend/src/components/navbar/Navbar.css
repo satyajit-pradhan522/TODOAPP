@@ -1,11 +1,6 @@
-.user-png {
-  width: 45px;
-  height: 30px;
-  border-radius: 50%;
-}
 .navbar-set {
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   display: flex;
   align-items: center;
 }
@@ -14,6 +9,7 @@
   font-size: 24px;
   color: rgba(255, 0, 0, 0.836);
   text-decoration: none;
+  font-weight: 700;
 }
 .brand-name {
   display: flex;
@@ -21,12 +17,4 @@
   gap: 8px;
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
-}
-.btn-nav {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  background-color: rgba(255, 0, 0, 0.836);
-  color: white !important;
-  border-radius: 5px;
-  padding: 5px 10px;
-}
+} 

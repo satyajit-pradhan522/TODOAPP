@@ -1,0 +1,16 @@
+
+.todo-btn {
+  padding: 10px 20px;
+  background-color: rgba(240, 0, 0, 0.87);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+}
+.todo-btn:hover {
+  background-color: rgba(255, 70, 70, 0.87);
+}
