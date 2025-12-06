@@ -1,39 +1,74 @@
-/* Main Theme Color */
-.color-primary {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+/* Full wrapper */
+.signup-wrapper {
+  min-height: 100vh;
+  background: #eef3ff;
+}
+
+/* Left panel (desktop) */
+.left-panel {
+  background: linear-gradient(135deg, #5b7bff, #6ea0ff);
+  color: white;
+  padding: 60px;
+}
+
+/* Signup Card */
+.signup-card {
+  width: 90%;
+  max-width: 420px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Blur fallback */
+.signup-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(18px);
+  transform: scale(1.2);
+  z-index: -1;
+}
+
+/* Inputs */
+.input-box {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #c9d4ff;
 }
 
 /* Signup Button */
 .signup-btn {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: #fff;
+  background: linear-gradient(135deg, #5b7bff, #6ea0ff);
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
   font-weight: 600;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
   transition: 0.3s ease;
 }
 
 .signup-btn:hover {
-  opacity: 0.9;
   transform: translateY(-2px);
+  box-shadow: 0px 5px 15px rgba(100, 130, 255, 0.4);
 }
 
-/* Input Focus Effect */
-.form-control:focus {
-  border-color: #6a11cb;
-  box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
-}
-
-/* Card Styling */
-.card {
-  border-radius: 15px;
-  border: none;
-}
-
-/* Mobile Optimization */
+/* Mobile UI Tweaks */
 @media (max-width: 768px) {
-  .color-primary {
-    display: none;
+  .signup-wrapper {
+    padding: 20px;
+  }
+
+  .signup-card {
+    padding: 25px;
+    border-radius: 16px;
+  }
+
+  .left-panel {
+    display: none !important;
   }
 }

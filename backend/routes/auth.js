@@ -15,9 +15,11 @@ router.post("/register", async (req, res) => {
     });
     // Save user and respond
     const user = await newUser.save();
-    res.status(201).json(user);
+    res.status(200).json({
+      message: "Signed up successfully",
+    });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(200).json({ message: "User Already Exists" });
   }
 });
 // Log In

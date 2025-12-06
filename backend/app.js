@@ -1,11 +1,14 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+const cors = require("cors");
+
 require("./connection/connection");
 const authRoute = require("./routes/auth");
 const listRoute = require("./routes/list");
 
 app.use(express.json());
+app.use(cors());
 app.use("/api/auth", authRoute);
 
 app.use(express.json());
