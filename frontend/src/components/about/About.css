@@ -1,0 +1,65 @@
+/* Background gradient */
+.about-wrapper {
+  background: linear-gradient(to bottom right, #eef5ff, #ffffff);
+}
+
+/* Card styling */
+.about-card {
+  transition: 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Profile Circle */
+.profile-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  font-size: 42px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Name */
+.user-name {
+  font-weight: 600;
+}
+
+/* About Text */
+.about-text {
+  line-height: 1.7;
+}
+
+/* Feature Boxes */
+.feature-box {
+  background: #f8faff;
+  border: 1px solid #e4e8f2;
+  transition: 0.3s;
+}
+
+.feature-box:hover {
+  background: white;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .profile-circle {
+    width: 110px;
+    height: 110px;
+    font-size: 32px;
+  }
+}
+@media (max-width: 576px) {
+  .about-card {
+    margin-bottom: 20px;
+  }
+}

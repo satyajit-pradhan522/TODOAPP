@@ -1,35 +1,38 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-light text-dark py-4 mt-5">
-      <div className="container text-center">
-        <h5 className="fw-bold">Todo App</h5>
-        <p className="text-secondary  mt-2 mb-3">
+    <footer className="footer-wrapper mt-5 py-4">
+      <div className="container text-center text-light">
+        <h3 className="fw-bold">Todo App</h3>
+        <p className="footer-tagline mt-2">
           Stay productive and manage your daily tasks effortlessly.
         </p>
 
-        <div className="d-flex justify-content-center gap-4 my-3">
-          <a href="#" className="text-dark text-decoration-none">
+        {/* Footer Links */}
+        <div className="footer-links d-flex justify-content-center gap-4 my-3">
+          <Link to="/" className="footer-link">
             Home
-          </a>
-          <a href="#" className="text-dark text-decoration-none">
+          </Link>
+          <Link to="/about" className="footer-link">
             About
-          </a>
-          <a href="#" className="text-dark text-decoration-none">
+          </Link>
+          <Link to="/todo" className="footer-link">
             Tasks
-          </a>
+          </Link>
         </div>
 
-        <hr className="border-dark" />
+        <div className="footer-line"></div>
 
-        <p className="small mb-0">
+        <p className="small mt-3 mb-0">
           © {new Date().getFullYear()} | Made with ❤️ by{" "}
-          <strong>Satyajit Pradhan</strong>
+          <strong className="author-name">Satyajit Pradhan</strong>
         </p>
       </div>
     </footer>
   );
 };
+
 export default Footer;

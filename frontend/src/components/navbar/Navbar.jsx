@@ -1,17 +1,19 @@
 import React from "react";
 import { FcTodoList } from "react-icons/fc";
-import "./Navbar.css";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-light shadow-sm py-3">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
       <div className="container">
+        {/* Brand */}
         <Link className="navbar-brand d-flex align-items-center gap-2" to="/">
-          <FcTodoList size={28} />
-          <span className="brand-name">Todo App</span>
+          <FcTodoList size={30} />
+          <span className="brand-text">Todo App</span>
         </Link>
 
+        {/* Toggler */}
         <button
           className="navbar-toggler"
           type="button"
@@ -21,22 +23,23 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
+        {/* Menu */}
         <div className="collapse navbar-collapse" id="menu">
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-3 mt-3 mt-lg-0">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link nav-link-custom" to="/">
                 Home
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <Link className="nav-link nav-link-custom" to="/about">
                 About Us
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/todo">
+              <Link className="nav-link nav-link-custom" to="/todo">
                 Todos
               </Link>
             </li>
@@ -47,13 +50,13 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li className="nav-item ms-2">
+            <li className="nav-item">
               <Link className="btn btn-success nav-btn" to="/login">
                 Login
               </Link>
             </li>
 
-            <li className="nav-item ms-2">
+            <li className="nav-item">
               <Link className="btn btn-danger nav-btn" to="/">
                 Logout
               </Link>

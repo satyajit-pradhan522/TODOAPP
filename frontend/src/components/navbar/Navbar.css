@@ -1,20 +1,38 @@
-.navbar-set {
-  font-family: "Poppins", sans-serif;
+/* Brand Text */
+.brand-text {
+  font-size: 1.4rem;
   font-weight: 700;
-  display: flex;
-  align-items: center;
+  color: #333;
 }
 
-.navbar-brand {
-  font-size: 24px;
-  color: rgba(255, 0, 0, 0.836);
-  text-decoration: none;
-  font-weight: 700;
+/* Nav Links */
+.nav-link-custom {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555 !important;
+  transition: 0.3s ease;
 }
-.brand-name {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-} 
+
+.nav-link-custom:hover {
+  color: #0d6efd !important;
+}
+
+/* Buttons inside Navbar */
+.nav-btn {
+  padding: 6px 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+/* Mobile menu spacing */
+@media (max-width: 991px) {
+  .nav-btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .navbar-nav {
+    gap: 10px;
+  }
+}

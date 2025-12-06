@@ -64,106 +64,108 @@ const Todo = () => {
   };
 
   return (
-    <div className="container py-5">
-      <ToastContainer />
+    <div>
+      <div className="todo-container py-5">
+        <ToastContainer />
 
-      {/* Heading */}
-      <div className="text-center mb-4">
-        <h1 className="fw-bold">Your Todos</h1>
-        <p className="text-muted">Stay organized and manage your daily tasks</p>
-      </div>
-
-      <div className="row g-4">
-        {/* Add / Update Task Form */}
-        <div className="col-12 col-lg-4">
-          <div className="card shadow p-4">
-            <h4 className="mb-3">
-              {isUpdating ? "Update Task" : "Add New Task"}
-            </h4>
-
-            <form onSubmit={isUpdating ? handleUpdateTask : handleAddTask}>
-              {/* Title */}
-              <div className="mb-3">
-                <label className="form-label">Task Title</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="title"
-                  placeholder="Enter task title"
-                  value={task.title}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              {/* Body */}
-              <div className="mb-3">
-                <label className="form-label">Task Description</label>
-                <textarea
-                  className="form-control"
-                  name="body"
-                  rows="3"
-                  placeholder="Enter task description"
-                  value={task.body}
-                  onChange={handleChange}
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                className={`btn w-100 ${
-                  isUpdating ? "btn-warning" : "btn-primary"
-                }`}
-                type="submit"
-              >
-                {isUpdating ? "Update Task" : "Add Task"}
-              </button>
-            </form>
-          </div>
+        {/* Heading */}
+        <div className="text-center mb-4">
+          <h1 className="fw-bold app-title">Your Todos</h1>
+          <p className="text-muted">
+            Stay organized and manage your daily work
+          </p>
         </div>
 
-        {/* Task List */}
-        <div className="col-12 col-lg-8">
-          {taskList.length === 0 ? (
-            <div className="text-center text-muted mt-5">
-              <h5>No tasks yet</h5>
-              <p>Add some tasks to get started.</p>
+        <div className="row g-4">
+          {/* Add / Update Task Form */}
+          <div className="col-12 col-lg-4">
+            <div className="todo-card shadow-lg p-4 rounded-4">
+              <h4 className="mb-3 form-title">
+                {isUpdating ? "✏️ Update Task" : "➕ Add New Task"}
+              </h4>
+
+              <form onSubmit={isUpdating ? handleUpdateTask : handleAddTask}>
+                {/* Title */}
+                <div className="mb-3">
+                  <label className="form-label">Task Title</label>
+                  <input
+                    type="text"
+                    className="form-control input-box"
+                    name="title"
+                    placeholder="Enter task title"
+                    value={task.title}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                {/* Body */}
+                <div className="mb-3">
+                  <label className="form-label">Task Description</label>
+                  <textarea
+                    className="form-control input-box"
+                    name="body"
+                    rows="3"
+                    placeholder="Enter task description"
+                    value={task.body}
+                    onChange={handleChange}
+                    required
+                  ></textarea>
+                </div>
+
+                <button
+                  className={`btn w-100 custom-btn ${
+                    isUpdating ? "btn-update" : "btn-add"
+                  }`}
+                  type="submit"
+                >
+                  {isUpdating ? "Update Task" : "Add Task"}
+                </button>
+              </form>
             </div>
-          ) : (
-            <div className="row g-3">
-              {taskList.map((item) => (
-                <div className="col-12" key={item.id}>
-                  <div className="card shadow-sm p-3 d-flex flex-row justify-content-between align-items-start">
-                    <div>
-                      <h5 className="fw-bold">{item.title}</h5>
-                      <p className="text-muted mb-2">{item.body}</p>
-                      <small className="text-secondary">
-                        Created at: {new Date(item.id).toLocaleString()}
-                      </small>
-                    </div>
+          </div>
 
-                    <div className="d-flex flex-column gap-2">
-                      {/* Update */}
-                      <button
-                        className="btn btn-warning btn-sm"
-                        onClick={() => startUpdate(item)}
-                      >
-                        Update
-                      </button>
+          {/* Task List */}
+          <div className="col-12 col-lg-8">
+            {taskList.length === 0 ? (
+              <div className="text-center empty-state">
+                <h5>No tasks yet</h5>
+                <p>Add some tasks to get started.</p>
+              </div>
+            ) : (
+              <div className="row g-3">
+                {taskList.map((item) => (
+                  <div className="col-12" key={item.id}>
+                    <div className="todo-item shadow-sm p-3 rounded-4 d-flex flex-row justify-content-between align-items-start">
+                      <div>
+                        <h5 className="fw-bold item-title">{item.title}</h5>
+                        <p className="text-muted mb-2">{item.body}</p>
+                        <small className="text-secondary">
+                          Created: {new Date(item.id).toLocaleString()}
+                        </small>
+                      </div>
 
-                      {/* Delete */}
-                      <button
-                        className="btn btn-danger btn-sm"
-                        onClick={() => deleteTask(item.id)}
-                      >
-                        Delete
-                      </button>
+                      <div className="d-flex flex-column gap-2">
+                        <button
+                          className="btn btn-sm btn-update2"
+                          onClick={() => startUpdate(item)}
+                        >
+                          Update
+                        </button>
+
+                        <button
+                          className="btn btn-sm btn-delete"
+                          onClick={() => deleteTask(item.id)}
+                        >
+                          Delete
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          )}
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

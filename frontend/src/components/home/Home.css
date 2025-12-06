@@ -1,19 +1,56 @@
-.home-container {
-  width: 100%;
-  height: 100vh;
+/* Background gradient */
+.home-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #eef5ff, #ffffff);
 }
-.home-btn {
-  padding: 10px 20px;
-  background-color: rgba(240, 0, 0, 0.87);
+
+/* Hero Section */
+.hero-box {
+  transition: 0.3s ease-in-out;
+}
+
+.hero-box:hover {
+  transform: translateY(-4px);
+}
+
+/* Hero Button */
+.hero-btn {
+  background: #0d6efd;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  font-family: "Outfit", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: 0.3s;
 }
-.home-btn:hover {
-  background-color: rgba(203, 32, 32, 0.87);
+
+.hero-btn:hover {
+  background: #0056d2;
+  transform: translateY(-3px);
+}
+
+/* Feature Cards */
+.feature-card {
+  background: #f9fbff;
+  border: 1px solid #e3e9f5;
+  transition: 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  background: white;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .hero-box {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 1.9rem !important;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
 }

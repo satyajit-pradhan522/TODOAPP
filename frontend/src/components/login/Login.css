@@ -1,18 +1,44 @@
-.color-primary {
-  background-color: rgba(255, 0, 0, 0.836);
+/* Left side background */
+.login-left {
+  background: linear-gradient(135deg, #0d6efd, #2f87ff);
 }
-.login-btn {
-  padding: 10px 20px;
-  background-color: rgba(240, 0, 0, 0.87);
-  color: white;
+
+/* Card styling */
+.login-card {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  font-family: "Outfit", sans-serif;
-  font-weight: 500;
 }
+
+/* Login Button */
+.login-btn {
+  background: #0d6efd;
+  color: white;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
 .login-btn:hover {
-  background-color: rgba(255, 70, 70, 0.87);
+  background: #0056d2;
+}
+
+/* Inputs */
+.form-control {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 4px rgba(13, 110, 253, 0.3);
+}
+
+/* Mobile Optimized */
+@media (max-width: 991px) {
+  .login-left {
+    display: none !important;
+  }
 }

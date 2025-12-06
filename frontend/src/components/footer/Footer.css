@@ -1,7 +1,39 @@
-.footer {
-  background-color: #f8f9fa;
-  padding: 20px;
-  text-align: center;
+/* Background gradient */
+.footer-wrapper {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Tagline */
+.footer-tagline {
   font-size: 14px;
-  color: #6c757d;
+  opacity: 0.8;
+}
+
+/* Footer Links */
+.footer-link {
+  color: #dbe9ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.footer-link:hover {
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* Line */
+.footer-line {
+  width: 70%;
+  height: 1px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.3);
+  margin-top: 15px;
+}
+
+/* Author Glow */
+.author-name {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
 }

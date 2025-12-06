@@ -3,28 +3,43 @@ import { Link } from "react-router-dom";
 import "./Signup.css";
 
 const Signup = () => {
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const change = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const submit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    setFormData({ username: "", email: "", password: "" });
+  };
+
   return (
     <div className="container-fluid p-0">
       <div className="row g-0">
-        {/* Left Side Image (Desktop Only) */}
+        {/* Left Section – Desktop Only */}
         <div className="col-lg-6 d-none d-lg-flex align-items-center justify-content-center color-primary text-white p-5">
-          <div className="text-center">
+          <div className="text-center px-4">
             <h1 className="fw-bold mb-4">Welcome to Todo App</h1>
             <p className="lead">
-              Stay organized and productive.
-              <br />
-              Create your account and start managing your tasks easily.
+              Organize your tasks, boost your productivity,
+              <br /> and stay ahead every day.
             </p>
           </div>
         </div>
 
-        {/* Right Side Form */}
+        {/* Right Section – Signup Form */}
         <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center py-5">
           <div
             className="card shadow p-4"
             style={{ width: "90%", maxWidth: "400px" }}
           >
-            <h2 className="text-center mb-3">Create Account</h2>
+            <h2 className="text-center mb-3 fw-bold">Create Account</h2>
             <p className="text-center text-muted mb-4">
               Sign up to get started
             </p>
@@ -38,18 +53,22 @@ const Signup = () => {
                   name="username"
                   className="form-control"
                   placeholder="Enter your username"
+                  onChange={change}
+                  value={formData.username}
                   required
                 />
               </div>
 
               {/* Email */}
               <div className="mb-3">
-                <label className="form-label">Email address</label>
+                <label className="form-label">Email Address</label>
                 <input
                   type="email"
                   name="email"
                   className="form-control"
                   placeholder="Enter your email"
+                  onChange={change}
+                  value={formData.email}
                   required
                 />
               </div>
@@ -62,11 +81,18 @@ const Signup = () => {
                   name="password"
                   className="form-control"
                   placeholder="Enter your password"
+                  onChange={change}
+                  value={formData.password}
                   required
                 />
               </div>
 
-              <button type="submit" className="btn signup-btn w-100">
+              {/* Button */}
+              <button
+                type="submit"
+                className="btn signup-btn w-100"
+                onClick={submit}
+              >
                 Sign Up
               </button>
             </form>

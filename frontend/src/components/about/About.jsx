@@ -3,72 +3,62 @@ import "./About.css";
 
 const About = () => {
   return (
-    <div className="container my-5">
-      <div className="row align-items-center shadow p-4 rounded bg-white">
-        {/* Left Side – Profile */}
-        <div className="col-md-4 text-center mb-4 mb-md-0">
-          <div
-            className="rounded-circle d-flex justify-content-center align-items-center mx-auto"
-            style={{
-              width: "130px",
-              height: "130px",
-              background: "linear-gradient(135deg, #4b6cb7 0%, #182848 100%)",
-              color: "white",
-              fontSize: "40px",
-              fontWeight: "600",
-            }}
-          >
-            SP
+    <div className="about-wrapper py-5">
+      <div className="container">
+        <div className="row align-items-center shadow about-card p-4 p-md-5 rounded bg-white">
+          {/* Left Profile Section */}
+          <div className="col-md-4 text-center mb-4 mb-md-0">
+            <div className="profile-circle mx-auto mb-3">SP</div>
+
+            <h4 className="user-name mb-1">Satyajit Pradhan</h4>
+            <p className="text-muted">CSE Student • MERN Stack Developer</p>
           </div>
 
-          <h4 className="mt-3 mb-1">Satyajit Pradhan</h4>
-          <p className="text-muted">CSE Student • MERN Stack Developer</p>
-        </div>
+          {/* About Section */}
+          <div className="col-md-8">
+            <h2 className="fw-bold mb-3">About This Todo App</h2>
+            <p className="text-secondary about-text">
+              This Todo App helps you stay organized and productive every day.
+              Built using the MERN stack (MongoDB, Express, React, Node.js), it
+              offers a smooth and modern experience to create, update, and
+              manage tasks efficiently.
+            </p>
 
-        {/* Right Side – About Content */}
-        <div className="col-md-8">
-          <h2 className="fw-bold">About This Todo App</h2>
-          <p className="text-secondary">
-            This Todo App is designed to help you stay organized and productive
-            in your daily life. Built with the MERN stack (MongoDB, Express,
-            React, Node.js), it offers a clean interface and smooth experience.
-            You can create, update, and manage your tasks easily in one place.
-          </p>
-
-          <div className="row g-3 mt-2">
-            <div className="col-6">
-              <div className="p-3 border rounded bg-light">
-                <h6 className="fw-semibold">User Friendly</h6>
-                <p className="small text-muted mb-0">
-                  Simple and clean interface.
-                </p>
+            <div className="row g-3 mt-3">
+              <div className="col-6">
+                <div className="feature-box p-3 rounded shadow-sm">
+                  <h6 className="fw-semibold mb-1">User Friendly</h6>
+                  <p className="small text-muted mb-0">
+                    Simple clean interface.
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="col-6">
-              <div className="p-3 border rounded bg-light">
-                <h6 className="fw-semibold">Fast</h6>
-                <p className="small text-muted mb-0">
-                  Backend optimized for quick response.
-                </p>
+              <div className="col-6">
+                <div className="feature-box p-3 rounded shadow-sm">
+                  <h6 className="fw-semibold mb-1">Fast</h6>
+                  <p className="small text-muted mb-0">
+                    Optimized performance.
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="col-6">
-              <div className="p-3 border rounded bg-light">
-                <h6 className="fw-semibold">Responsive</h6>
-                <p className="small text-muted mb-0">
-                  Works on mobile, tablet & desktop.
-                </p>
+              <div className="col-6">
+                <div className="feature-box p-3 rounded shadow-sm">
+                  <h6 className="fw-semibold mb-1">Responsive</h6>
+                  <p className="small text-muted mb-0">
+                    Perfect on all screen sizes.
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="col-6">
-              <div className="p-3 border rounded bg-light">
-                <h6 className="fw-semibold">Extendable</h6>
-                <p className="small text-muted mb-0">
-                  Easily add features like reminders & filters.
-                </p>
+              <div className="col-6">
+                <div className="feature-box p-3 rounded shadow-sm">
+                  <h6 className="fw-semibold mb-1">Extendable</h6>
+                  <p className="small text-muted mb-0">
+                    Add reminders, categories & more.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

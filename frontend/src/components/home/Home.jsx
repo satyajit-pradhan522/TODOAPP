@@ -6,49 +6,50 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="home-container">
-      <div className="container my-5">
-        {/* Hero Section */}
-        <div className="p-5 rounded-4 shadow bg-white text-center">
-          <h1 className="fw-bold">Welcome to My Todo App</h1>
+    <div className="home-wrapper py-5">
+      {/* Hero Section */}
+      <div className="container text-center">
+        <div className="hero-box shadow-lg p-5 rounded-4 bg-white">
+          <h1 className="fw-bold display-5">Organize Your Day Smarter</h1>
           <p className="mt-3 text-secondary fs-5">
-            Stay organized, focused, and productive every single day. Manage
-            your tasks easily with a clean and simple interface.
+            A clean, fast, and simple Todo App to keep your life on track.
           </p>
 
           <button
-            className="home-btn btn-lg mt-3"
+            className="btn hero-btn btn-lg mt-4 px-5"
             onClick={() => navigate("/todo")}
           >
             Start Creating Tasks
           </button>
         </div>
+      </div>
 
-        {/* Features Section */}
-        <div className="row text-center mt-5 g-4">
+      {/* Features Section */}
+      <div className="container mt-5">
+        <div className="row g-4">
           <div className="col-md-4">
-            <div className="p-4 border rounded bg-light shadow-sm h-100">
-              <h4 className="fw-semibold">Easy To Use</h4>
-              <p className="text-muted">
-                Add, edit, or delete tasks with just a click.
+            <div className="feature-card p-4 rounded text-center h-100 shadow-sm">
+              <h4 className="fw-bold">✨ Easy To Use</h4>
+              <p className="text-muted mt-2">
+                Add, edit, and delete tasks with a clean interface.
               </p>
             </div>
           </div>
 
           <div className="col-md-4">
-            <div className="p-4 border rounded bg-light shadow-sm h-100">
-              <h4 className="fw-semibold">Manage Tasks</h4>
-              <p className="text-muted">
-                Track your daily tasks and improve productivity.
+            <div className="feature-card p-4 rounded text-center h-100 shadow-sm">
+              <h4 className="fw-bold">📌 Manage Tasks</h4>
+              <p className="text-muted mt-2">
+                Organize your day and boost your productivity.
               </p>
             </div>
           </div>
 
           <div className="col-md-4">
-            <div className="p-4 border rounded bg-light shadow-sm h-100">
-              <h4 className="fw-semibold">Fully Responsive</h4>
-              <p className="text-muted">
-                Works seamlessly on mobile, tablet, and desktop.
+            <div className="feature-card p-4 rounded text-center h-100 shadow-sm">
+              <h4 className="fw-bold">📱 Fully Responsive</h4>
+              <p className="text-muted mt-2">
+                Works smoothly on mobile, tablet, and desktop.
               </p>
             </div>
           </div>
