@@ -108,8 +108,13 @@ const Signup = () => {
               </div>
 
               {/* Button */}
-              <button type="submit" className="btn signup-btn w-100">
-                Sign Up
+              <button
+                type="submit"
+                className="btn signup-btn w-100"
+                disabled={loading}
+                onClick={submit}
+              >
+                {loading ? "Signing Up..." : "Sign Up"}
               </button>
             </form>
 

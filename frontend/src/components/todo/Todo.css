@@ -17,8 +17,8 @@
   background: rgba(255, 255, 255, 0.85);
 
   /* Backdrop blur (supported browsers) */
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 /* Universal blur fallback (works 100% everywhere) */

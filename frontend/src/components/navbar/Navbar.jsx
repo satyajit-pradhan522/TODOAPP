@@ -1,9 +1,20 @@
 import React from "react";
 import { FcTodoList } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./Navbar.css";
+import { useDispatch } from "react-redux";
+import { logout } from "../../store";
 
 const Navbar = () => {
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    sessionStorage.removeItem("userId");
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
       <div className="container">
@@ -44,23 +55,33 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li className="nav-item">
-              <Link className="btn btn-primary nav-btn" to="/signup">
-                Sign Up
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link className="btn btn-success nav-btn" to="/login">
-                Login
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link className="btn btn-danger nav-btn" to="/">
-                Logout
-              </Link>
-            </li>
+            {!isAuthenticated && (
+              <li className="nav-item">
+                <Link className="btn btn-primary nav-btn" to="/signup">
+                  Sign Up
+                </Link>
+              </li>
+            )}
+            {!isAuthenticated && (
+              <li className="nav-item">
+                <Link className="btn btn-success nav-btn" to="/login">
+                  Login
+                </Link>
+              </li>
+            )}
+            {isAuthenticated && (
+              <li className="nav-item">
+                <Link
+                  className="btn btn-danger nav-btn"
+                  to="/"
+                  onClick={() => {
+                    handleLogout();
+                  }}
+                >
+                  Logout
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>
