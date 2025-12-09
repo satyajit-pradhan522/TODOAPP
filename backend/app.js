@@ -8,7 +8,14 @@ const authRoute = require("./routes/auth");
 const listRoute = require("./routes/list");
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin:
+      "https://todoapp-eq9y-1dhy35emo-satyajit-pradhans-projects.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use("/api/auth", authRoute);
 
 app.use(express.json());
