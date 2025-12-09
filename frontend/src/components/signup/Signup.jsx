@@ -23,7 +23,7 @@ const Signup = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        `${window.location.origin}/api/auth/register`,
         formData
       );
       if (response.data.message === "User Already Exists") {

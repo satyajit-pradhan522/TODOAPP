@@ -11,16 +11,6 @@ const Todo = () => {
   const [isUpdating, setIsUpdating] = useState(false);
   const [currentId, setCurrentId] = useState(null);
 
-  // Fetch tasks on mount
-  useEffect(() => {
-    if (!userId) return;
-
-    axios
-      .get(`http://localhost:3000/api/lists/getTasks/${userId}`)
-      .then((res) => setTaskList(res.data.tasks))
-      .catch(() => toast.error("Failed to load tasks"));
-  }, [userId, setTaskList]);
-
   const handleChange = (e) =>
     setTask({ ...task, [e.target.name]: e.target.value });
 
@@ -30,11 +20,14 @@ const Todo = () => {
     if (!task.title || !task.body) return;
 
     try {
-      const res = await axios.post("http://localhost:3000/api/lists/addTask", {
-        title: task.title,
-        body: task.body,
-        id: userId,
-      });
+      const res = await axios.post(
+        `${window.location.origin}/api/lists/addTask`,
+        {
+          title: task.title,
+          body: task.body,
+          id: userId,
+        }
+      );
 
       setTaskList([...taskList, res.data.task]);
       toast.success("Task added successfully!");
@@ -48,7 +41,7 @@ const Todo = () => {
   const deleteTask = async (taskId) => {
     try {
       await axios.delete(
-        `http://localhost:3000/api/lists/deleteTask/${taskId}/${userId}`
+        `${window.location.origin}/api/lists/deleteTask/${taskId}/${userId}`
       );
       setTaskList(taskList.filter((t) => t._id !== taskId));
       toast.success("Task deleted successfully!");
@@ -59,9 +52,11 @@ const Todo = () => {
 
   // Start Update
   const startUpdate = (item) => {
-    setIsUpdating(true);
-    setCurrentId(item._id);
-    setTask({ title: item.title, body: item.body });
+    useEffect(() => {
+      setIsUpdating(true);
+      setCurrentId(item._id);
+      setTask({ title: item.title, body: item.body });
+    }, [item]);
   };
 
   // Update Task
@@ -71,7 +66,7 @@ const Todo = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:3000/api/lists/updateTask/${currentId}`,
+        `${window.location.origin}/api/lists/updateTask/${currentId}`,
         {
           title: task.title,
           body: task.body,
@@ -88,6 +83,16 @@ const Todo = () => {
       toast.error("Failed to update task");
     }
   };
+
+  // Fetch tasks on mount
+  useEffect(() => {
+    if (!userId) return;
+
+    axios
+      .get(`${window.location.origin}/api/lists/getTasks/${userId}`)
+      .then((res) => setTaskList(res.data.tasks))
+      .catch(() => toast.error("Failed to load tasks"));
+  }, [userId, taskList]);
 
   return (
     <div className="todo-container py-5">
